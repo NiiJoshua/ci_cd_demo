@@ -1,10 +1,12 @@
 name: CI
 on: push
 jobs:
-    say-hello:
+    test:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout code
-              uses: actions/checkout@v3
-            - name: Say Hello
-              run: echo "Hello, World!"
+            - uses: actions/checkout@v5
+            - uses: actions/setup-python@v6
+              with:
+                  python-version: '3.12'
+            - run: pip install pytest
+            - run: pytest
