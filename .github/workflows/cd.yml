@@ -9,4 +9,4 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - run: echo "Deploying version $(cat VERSION) ..."
-        run: echo "In a real pipeline this would ship to a warehouse /server..."
+      - run: echo "In a real pipeline this would ship to a warehouse /server..."
